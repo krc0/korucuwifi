@@ -1,0 +1,185 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+    <style>
+        /* $main SECTİON */
+
+*{
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    font-family: sans-serif;
+}
+
+html{
+    font-size: 62.5%;
+}
+
+body{
+    height: 100%;
+}
+
+::selection{
+    background: #0c9eb5;
+}
+
+/* $container SECTİON# */
+
+#container{
+    width: 100%;
+    height: 100%;
+    background: url(background.jpg) no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#box1{
+
+    background: linear-gradient(to bottom, #0c9eb5, #00adbc, #00bdbf, #00ccbf, #05daba);
+    width: 80%;
+    height: 65%;
+    border-radius: 1rem;
+    margin-top: 3rem;
+    display: flex;
+    justify-content: center;
+    transition: 1s;
+
+    animation-name: box1Animation;
+    animation-iteration-count: infinite;
+    animation-duration: 1s;
+}
+
+
+@keyframes box1Animation {
+    0%{outline:  solid .1rem whitesmoke};
+    10%{outline: solid .1rem whitesmoke};
+    20%{border-top: solid .1rem whitesmoke};
+    30%{border-bottom: solid .1rem whitesmoke};
+    40%{border-top: solid .1rem whitesmoke};
+    50%{border-bottom: solid .1rem whitesmoke};
+    60%{border-top: solid .1rem whitesmoke};
+    70%{outline:solid .1rem whitesmoke};
+    80%{border-top: solid .1rem whitesmoke};
+    90%{border-bottom: solid .1rem whitesmoke};
+    100%{border-top: solid .1rem whitesmoke};
+}
+
+
+
+i{
+    font-size: 2rem;
+}
+
+#copybtn{
+    background: #00bdbf;
+    opacity: 80%;
+    border: none;
+    display: flex;
+    height: 3rem;
+    align-items: center;
+    width: 50%;
+    justify-content: center;
+    margin-top: 1rem;
+    border-radius: 1rem;
+    color: whitesmoke;
+    font-weight: bold;
+    position: absolute;
+    box-shadow: 0 0 1rem #0c9eb5;
+    transition: .5s;
+    cursor: pointer;
+}
+
+
+
+#copybtn i{
+    color: whitesmoke;
+    margin-right: .5rem;
+}
+
+#copybtn:hover{
+    background: transparent;
+    border: solid .1rem #00bdbf;
+    width: 25%;
+    color: rgba(245, 245, 245, 0.76);
+    cursor: pointer;
+}
+
+#password{
+    background: #00bdbf;
+    box-shadow: 0 0 2rem #0c9eb5;
+    opacity: 80%;
+    border: none;
+    display: flex;
+    height: 5rem;
+    align-items: center;
+    width: 70%;
+    justify-content: center;
+    margin-top: 15rem;
+    border-radius: 1rem;
+    color: whitesmoke;
+    font-size: 2rem;
+    outline: navajowhite;
+}
+
+#password i{
+    margin-right: 2rem;
+    margin-left: -2rem;
+}
+
+#metin{
+    position: absolute;
+    opacity: 0;
+}
+
+#ekran{
+    width: 50%;
+    height: 4rem;
+    color: white;
+    position: absolute;
+    background: #0c9eb5;
+    border-radius: 2rem;
+    margin-top: 25rem;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+
+    transition: .5s;
+}
+    </style>
+
+<body>
+    <div id="container">
+        <div id="box1">
+            
+            <button id="copybtn" onclick="btnClick()"><i class="fa-regular fa-copy"></i> Kopyala</button>
+            <div id="password"><i class="fa-solid fa-wifi"></i>2FJ6236865</div>
+            <input id="metin" value="2FJ6236865"></input>
+            <div id="ekran"></div>
+        </div>
+    </div>
+
+    <!--JAVASCRİPT-->
+    <script>
+        function btnClick() {
+    var metin = document.getElementById("metin");
+    metin.select();
+    document.execCommand("copy");
+    var ekran = document.getElementById("ekran");
+    ekran.style.display="flex";
+    ekran.innerHTML="Kopyalandı";
+    setTimeout(() => {
+        ekran.style.display="none";
+    }, "2000");
+}
+    </script>
+</body>
+</html>
